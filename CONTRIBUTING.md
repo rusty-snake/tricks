@@ -5,7 +5,7 @@ You need to install [ruby] and [bundler]. If you use fedora, you can simply run
 sudo dnf install ruby ruby-devel rubygem-bundler rubygem-json rubygem-bigdecimal
 ```
 
-You can the clone this repo, install jekyll and run it.
+You can then clone this repo, install jekyll and run it.
 
 ```bash
 git clone https://github.com/rusty-snake/tricks.git
