@@ -1,12 +1,9 @@
 # Tips & Tricks
 
-<ul>
+<p>
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
   {% endfor %}
-</ul>
-
+</p>
 
 Questions? <https://github.com/rusty-snake/tricks/discussions>
