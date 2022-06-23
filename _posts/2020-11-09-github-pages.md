@@ -44,3 +44,5 @@ __EOF__
 # preview it with: bundle exec jekyll serve
 # commit it
 ```
+
+**Update 2022-06-23**: You need to run `bundle add webrick` if you use Ruby 3.0, see <https://github.com/github/pages-gem/issues/752>.
