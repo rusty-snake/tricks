@@ -5,7 +5,6 @@ author: "rusty-snake"
 #tags:
 ---
 
-gnome-control-center
 Annoyed by entering your password every time you change printer settings in
 gnome-control-center?
 
