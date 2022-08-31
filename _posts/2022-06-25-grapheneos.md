@@ -44,7 +44,11 @@ reboot
   - Connected Devices > Connection settings > NFC: Off
   - Network & Internet > Internet > Network Settings > Turn off Wi-Fi automatically: 15sec
   - Connected Devices > Bluetooth timeout: 15sec
-- Apps: TODO
+- Cellular network can be hardened.
+  - Network & Internet > SIM-Card > Prefered Nettype: LTE-only
+  - Network & Internet > SIM-Card > 2G: Off
+- WiFi calling can be enabled (contract dependent).
+  - Network & Internet > SIM-Card > WLAN-Telefonie
 - If you want you can enable Auto reboot.
   - Security > Auto reboot: _duration_
 - You can further hardening USB security by always denying USB accessories if
@@ -64,16 +68,22 @@ reboot
   - Position > Services > Bluetooth Search: Off
 - Not security/privacy relevant but really handy.
   - System > Gestures and Moves > One hand mode: On
+  - Notifications > Allow snooze for notifications: On
+- Enable Material You if you want.
+  - Styles & Wallpapers > Use wallpsper colors: On
+- To catch "hidden" or short-living notifications, you should enable notifications
+  histroy and review it.
+  - Notifications > Notifications histroy: On
+- Enable app pining.
+  - Security > More Security settings > App pining: On
 - System > user profiles: TODO
 - Do not include private data in your device name.
   - About the Phone > Device name
 
-<p></p>
-
-- You can disable auto-complete in Vanadium if you don't need it.
-  - Privacy and Security > Search and URL completion: Off
 
 ## F-Droid
+
+> _TODO: Use Neo Store here._
 
 Go to <https://f-droid.org/>, download F-Droid, verify it using gpg¹,
 transfer it to your phone, install it and update it.
@@ -82,6 +92,7 @@ transfer it to your phone, install it and update it.
 
 ### Additional Repositories
 
+- Guardian Project Offical Releases
 - [IzzyOnDroid F-Droid Repo](https://apt.izzysoft.de/fdroid/)
   ```
   https://apt.izzysoft.de/fdroid/repo/?fingerprint=3BF0D6ABFEAE2F401707B6D966BE743BF0EEE49C2561B9BA39073711F628937A
@@ -90,62 +101,274 @@ transfer it to your phone, install it and update it.
   ```
   https://archive.newpipe.net/fdroid/repo/?fingerprint=E2402C78F9B97C6C89E97DB914A2751FDA1D02FE2039CC0897A462BDB57E7501
   ```
-- [Bromite official F-Droid repository](https://www.bromite.org/fdroid)
-  ```
-  https://fdroid.bromite.org/fdroid/repo/?fingerprint=E1EE5CD076D7B0DC84CB2B45FB78B86DF2EB39A3B6C56BA3DC292A5E0C3B9504
-  ```
+- DivestOS Official
 
-### Apps
+## Apps
 
 Some apps to get started with.
 
-#### NewPipe
+### Vanadium
 
-<https://newpipe.net/#download>
+_Vanadium comes pre-installed with GrapheneOS._
 
-#### Aegis
+#### Permissions
 
-<https://f-droid.org/packages/com.beemdevelopment.aegis>
+##### Remove
 
-#### KeePassDX
+- Nearby Devices
 
-<https://f-droid.org/packages/com.kunzisoft.keepass.libre/>
+#### Notifications
 
-#### Bromite
+- Disable Ingocnito notification
 
-<https://www.bromite.org/fdroid>
+#### Settings
 
-Suggested settings:
-
-- Privacy and Security > Expire history days threshold: _duration_
-- Privacy and Security > Incognito-mode > Always open links in incognito: On
+- You can disable auto-complete if you don't need it.
+  - Privacy and Security > Search and URL completion: Off
 - Privacy and Security > Open external links in incognito: On
+- You can enable app preview in the recently used apps view.<br>
+  `chrome://flags/#incognito-screenshot`: Enabled
 
-#### Signal
+### Neo Store
 
-<https://signal.org/android/apk/>
+<https://apt.izzysoft.de/fdroid/index/apk/com.machiav3lli.fdroid>
 
-#### Aurora Store
+#### Permissions
+
+##### Grant
+
+- Install unknown apps
+- Open links
+
+#### Settings
+
+- Downloaded APK cache retention: 10
+- Auto-sync interval (in minutes): 240
+
+### Aurora Store
 
 <https://f-droid.org/packages/com.aurora.store/>
 
-#### Exodus
+#### Permissions
+
+- Install unknown apps with obb access
+- Enable Storage Scopes
+- Open links
+
+### apps_Packages Info - Updated ApplicationsInfos (<sup>2</sup>
+
+<https://f-droid.org/packages/com.oF2pks.applicationsinfo/>
+
+### Exodus
 
 <https://f-droid.org/packages/org.eu.exodus_privacy.exodusprivacy/>
 
-#### Etar
+### PCAPdroid
+
+<https://f-droid.org/packages/com.emanuelef.remote_capture/>
+
+### Signal
+
+<https://signal.org/android/apk/>
+
+#### Permissions
+
+##### Grant
+
+- Media files
+- Microphone (or always ask if you're paranoid)
+- Camera (or always ask if you're paranoid)
+- Install unkonw apps
+- Battery usage: Unrestricted
+
+##### Remove
+
+- WLAN control
+
+#### Notifications
+
+- Disable Background-connections notification
+- Enable Bubbles if you want
+
+### Aegis
+
+<https://f-droid.org/packages/com.beemdevelopment.aegis>
+
+### KeePassDX
+
+<https://f-droid.org/packages/com.kunzisoft.keepass.libre/>
+
+### Tor Browser for Android
+
+<https://guardianproject.info/apps/org.torproject.torbrowser/>
+
+#### Permissions
+
+##### Remove
+
+- Sensors
+
+### Feeder
+
+<https://f-droid.org/packages/com.nononsenseapps.feeder/>
+
+### Etar
 
 <https://f-droid.org/packages/ws.xsoh.etar/>
 
-#### OpenTasks
+#### Permissions
+
+##### Grant
+
+- Calendar
+- Battery usage: Unrestricted
+
+### ICSx<sup>5</sup>
+
+<https://f-droid.org/packages/at.bitfire.icsdroid/>
+
+#### Permissions
+
+##### Grant
+
+- Calendar
+
+### DAVx<sup>5</sup>
+
+<https://f-droid.org/packages/at.bitfire.davdroid/>
+
+#### Permissions
+
+##### Grant
+
+- Calendar
+
+### OpenTasks
 
 <https://f-droid.org/packages/org.dmfs.tasks/>
 
-#### Joplin
+#### Permissions
 
-<https://apt.izzysoft.de/fdroid/index/apk/net.cozic.joplin>
+##### Grant
 
-#### Simple Mobile Tools
+- Battery usage: Unrestricted
+
+### Quillnote
+
+<https://f-droid.org/de/packages/org.qosp.notes/>
+
+#### Permissions
+
+##### Remove
+
+- Network
+
+### ExifEraser
+
+<https://apt.izzysoft.de/fdroid/index/apk/com.none.tom.exiferaser>
+
+### PrivacyBlur
+
+<https://f-droid.org/de/packages/de.mathema.privacyblur/>
+
+#### Permissions
+
+##### Grant
+
+- Media files
+
+### OCR
+
+<https://f-droid.org/de/packages/io.github.subhamtyagi.ocr/>
+
+#### Permissions
+
+##### Remove
+
+- Network
+  After initial downloading of traineddata files.
+
+### NewPipe
+
+<https://newpipe.net/#download>
+
+#### Permissions
+
+##### Grant
+
+- Open links
+
+### URL Radio
+
+<https://apt.izzysoft.de/fdroid/index/apk/com.jamal2367.urlradio>
+
+### VLC
+
+<https://f-droid.org/packages/org.videolan.vlc>
+
+#### Permission
+
+##### Grant
+
+- Media files
+
+##### Remove
+
+- Network
+- Nearby devices
+
+### Zapp
+
+<https://f-droid.org/packages/de.christinecoenen.code.zapp/>
+
+### Organic Maps
+
+<https://f-droid.org/de/packages/app.organicmaps/>
+
+#### Permissions
+
+##### Grant
+
+- Location
+
+#### Settings
+
+- 3D Buildings: Off
+- Show on lockscreen: Off
+
+### GMaps WV
+
+<https://f-droid.org/de/packages/us.spotco.maps/>
+
+### Compass
+
+<https://f-droid.org/packages/com.bobek.compass/>
+
+### CPU Info
+
+<https://f-droid.org/packages/com.kgurgul.cpuinfo/>
+
+#### Permissions
+
+##### Remove
+
+- Network
+
+### Atomic
+
+<https://apt.izzysoft.de/fdroid/index/apk/com.jlindemann.science>
+
+#### Permissions
+
+##### Remove
+
+- Network
+
+### Randomix - Decision Maker
+
+<https://f-droid.org/packages/com.minar.randomix/>
+
+### Simple Mobile Tools
 
 - [Simple App Launcher](https://f-droid.org/packages/com.simplemobiletools.applauncher/)
 - [Simple Calculator](https://f-droid.org/packages/com.simplemobiletools.calculator/)
@@ -165,3 +388,36 @@ Suggested settings:
 - [Simple Notes Pro](https://f-droid.org/packages/com.simplemobiletools.notes.pro/)
 - [Simple SMS Messenger](https://f-droid.org/packages/com.simplemobiletools.smsmessenger/)
 - [Simple Voice Recorder](https://f-droid.org/packages/com.simplemobiletools.voicerecorder/)
+
+### Clock
+
+_Pre-installed_
+
+#### Notifications
+
+- Disable Upcomming alarms notification
+
+### Telefon
+
+_Pre-installed_
+
+#### Permissions
+
+_TODO_
+
+### SMS/MMS
+
+_Pre-installed_
+
+#### Permissions
+
+_TODO_
+
+### More apps
+
+- <https://android.izzysoft.de/articles/named/list-of-fdroid-repos>
+- <https://android.izzysoft.de/applists.php>
+
+---
+
+_Last update: 2022-08-31_
