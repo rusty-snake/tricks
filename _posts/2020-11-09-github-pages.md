@@ -7,11 +7,11 @@ author: "rusty-snake"
 
 Install [ruby](https://www.ruby-lang.org/) and [bundler](https://bundler.io/). Fedora command:
 
-```bash
+~~~ bash
 sudo dnf install ruby ruby-devel rubygem-bundler rubygem-json rubygem-bigdecimal
-```
+~~~
 
-```bash
+~~~ bash
 mkdir my-awesome-site
 cd my-awesome-site
 bundle init
@@ -43,6 +43,6 @@ __EOF__
 # add your pages
 # preview it with: bundle exec jekyll serve
 # commit it
-```
+~~~
 
 **Update 2022-06-23**: You need to run `bundle add webrick` if you use Ruby 3.0, see <https://github.com/github/pages-gem/issues/752>.

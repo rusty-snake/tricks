@@ -18,24 +18,24 @@ You can easily use it in the terminal with the help of `tr`.
 
 Obfuscate `Hello World`:
 
-```console
+~~~ console
 $ echo "Hello World" | tr A-Za-z W-ZA-Vw-za-v
 Dahhk Sknhz
-```
+~~~
 
 And undo it by flipping the arguments of `tr`:
 
-```console
+~~~ console
 $ echo "Dahhk Sknhz" | tr W-ZA-Vw-za-v A-Za-z
 Hello World
-```
+~~~
 
 If you also want to obfuscate capitalization, you need to mix it a bit more:
 
-```console
+~~~ console
 $ echo "Hello World" | tr A-Za-z w-zA-Ma-vN-Z
 DnuuO fORum
-```
+~~~
 
 Of course this is not a cryptographically secure encryption but it is a nice
 gimmick to obfuscate the content of texts.

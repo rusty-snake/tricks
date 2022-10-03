@@ -10,7 +10,7 @@ These scripts are placed in `~/.local/share/nautilus/scripts`.
 
 ## pngquant
 
-```bash
+~~~ bash
 #!/bin/bash
 for file in "$@"; do
     if [[ -e $file && $(file --mime-type --brief "$file") == "image/png" ]]; then
@@ -23,15 +23,15 @@ for file in "$@"; do
         fi
     fi
 done
-```
+~~~
 
 ## Run in firejail
 
-```bash
+~~~ bash
 #!/bin/bash
 if [[ $# -gt 1 ]]; then
     zenity --error --title="Run in firejail" --text="Too many arguments.\n\nYou can only run one program in firejail."             
     exit 2
 fi  
 exec firejail "$1"
-```
+~~~

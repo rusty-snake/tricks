@@ -22,6 +22,10 @@ title: "rusty-snake's Tips & Tricks"
 description: Collection of useful commands and configs.
 repository: rusty-snake/tricks
 
+markdown: kramdown
+kramdown:
+  input: kramdown
+
 # Build settings
 theme: jekyll-theme-hacker
 plugins:

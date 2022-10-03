@@ -17,7 +17,7 @@ To enable non-root flashing with a distribution other than Arch Linux/Debian
 based, you can directly install the source of the `android-udev` packet from
 Arch Linux as long as your system isn't too exotic:
 
-```bash
+~~~ bash
 git clone https://github.com/M0Rf30/android-udev-rules.git
 cd android-udev-rules
 
@@ -26,7 +26,7 @@ sudo install -Dm0644 android-udev.conf /etc/sysusers.d/android-udev.conf
 sudo systemd-sysusers
 sudo gpasswd -a "$(whoami)" adbusers
 reboot
-```
+~~~
 
 ## Settings
 
@@ -94,13 +94,13 @@ transfer it to your phone, install it and update it.
 
 - Guardian Project Offical Releases
 - [IzzyOnDroid F-Droid Repo](https://apt.izzysoft.de/fdroid/)
-  ```
+  ~~~
   https://apt.izzysoft.de/fdroid/repo/?fingerprint=3BF0D6ABFEAE2F401707B6D966BE743BF0EEE49C2561B9BA39073711F628937A
-  ```
+  ~~~
 - [NewPipe upstream repository](https://newpipe.net/#download)
-  ```
+  ~~~
   https://archive.newpipe.net/fdroid/repo/?fingerprint=E2402C78F9B97C6C89E97DB914A2751FDA1D02FE2039CC0897A462BDB57E7501
-  ```
+  ~~~
 - DivestOS Official
 
 ## Apps

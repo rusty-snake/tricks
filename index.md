@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Tips & Tricks
 
 <p>

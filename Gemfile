@@ -9,11 +9,13 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 
-gem "github-pages", group: :jekyll_plugins
-# If you have any plugins, put them here!
+gem "jekyll", "~> 4.2.2"
+
+gem "jekyll-theme-hacker"
+
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
 end
 
-# https://github.com/github/pages-gem/issues/752
+# Required when using ruby >= 3.0.0
 gem "webrick", "~> 1.7"
