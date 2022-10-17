@@ -14,7 +14,7 @@ gem "jekyll", "~> 4.2.2"
 gem "jekyll-theme-hacker"
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-feed", "~> 0.17"
 end
 
 # Required when using ruby >= 3.0.0
