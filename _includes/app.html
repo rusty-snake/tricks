@@ -1,0 +1,48 @@
+{::comment} 2022-10-29-app-recommendations.md {:/comment}
+
+<div style="border: 1px dotted #b5e853; padding: 1em;">
+  <strong style="font-size: 1.2em;">{{ include.name }}</strong>
+  <p></p>
+
+  URL: <a href="{{ include.url }}">{{ include.url }}</a>
+  <p></p>
+
+  {% if include.anti_features %}
+    <strong style="font-size: 1.1em; color: salmon;">F-Droid Anti-Features</strong>
+    <ul>
+      {% assign anti_features = include.anti_features | split: ";" %}
+      {% for anti_feature in anti_features %}
+        <li>{{ anti_feature }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if include.grant or include.revoke %}
+    <strong style="font-size: 1.1em;">Permissions</strong>
+    <table style="margin: 0px;">
+      <tr>
+        <th scope="col" style="width: 50%;">Grant</th>
+        <th scope="col" style="width: 50%;">Revoke</th>
+      </tr>
+      <tr>
+        <td>
+          <ul>
+            {% assign grant = include.grant | split: ";" %}
+            {% for perm in grant %}
+              <li>{{ perm }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+        <td>
+          <ul>
+            {% assign revoke = include.revoke | split: ";" %}
+            {% for perm in revoke %}
+              <li>{{ perm }}</li>
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+    </table>
+  {% endif %}
+</div>
+<p></p>
