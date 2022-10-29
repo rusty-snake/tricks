@@ -46,3 +46,5 @@ __EOF__
 ~~~
 
 **Update 2022-06-23**: You need to run `bundle add webrick` if you use Ruby 3.0, see <https://github.com/github/pages-gem/issues/752>.
+
+**Update 2022-10-29**: This trick is for "classic Pages deployment".
