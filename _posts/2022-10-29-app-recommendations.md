@@ -39,7 +39,6 @@ Otherwise you can use the Aurora Store.
 - Auto-sync interval (in minutes): 240
 - Package sources:
   - F-Droid
-  - Guardian Project Offical Releases
   - IzzyOnDroid F-Droid Repo
   - NewPipe upstream repository
 
@@ -72,8 +71,7 @@ _Vanadium comes pre-installed with GrapheneOS._
 
 {% include app.html
   name = "Tor Browser for Android"
-  url = "https://guardianproject.info/apps/org.torproject.torbrowser/"
-  anti_features = "Non-Free Dependencies;Non-Free Network Services"
+  url = "https://www.torproject.org/download/#android"
   %}
 
 ## Messenger
@@ -97,6 +95,7 @@ _Vanadium comes pre-installed with GrapheneOS._
 - If you saved your PIN in a password-manager, you can disable
   PIN notifications.
 - Enable Registration Lock
+- Enable Message Backup
 
 ## Feed Reader
 
@@ -126,6 +125,15 @@ _Vanadium comes pre-installed with GrapheneOS._
   name = "Aegis"
   url = "https://f-droid.org/packages/com.beemdevelopment.aegis"
   %}
+
+#### Settings
+
+- Appearance > Theme: System default (AMOLED)
+- Behaviour > Highlight token when tapped: On
+- Behaviour > Freeze tokens when tapped: On
+- Security > Tap to reveal: On
+- Backups > Automatically back up vault: On
+- Backups > Participate in Adnroid's backup system: On
 
 ### KeePassDX
 
@@ -426,7 +434,6 @@ Add it back when they fixed the F-Droid build.
 <https://f-droid.org/packages/org.eu.exodus_privacy.exodusprivacy/>
 {:/comment}
 
-### More apps
+<br>
 
-- <https://android.izzysoft.de/articles/named/list-of-fdroid-repos>
-- <https://android.izzysoft.de/applists.php>
+Last update: 2022-11-01
