@@ -204,6 +204,15 @@ it's still one of the better FOSS Audio player I know.
   grant = "Music and Audio"
   %}
 
+### LibreTube
+
+{% include app.html
+  name = "LibreTube"
+  url = "https://f-droid.org/packages/com.github.libretube/"
+  anti_features = "Non-Free Network Services"
+  grant = "Open links"
+  %}
+
 ### NewPipe
 
 {% include app.html
@@ -246,6 +255,13 @@ Actually URL Radio is very buggy and I need to find a better app for radio strea
   %}
 
 ## Calendar
+
+### Simple Calendar Pro
+
+{% include app.html
+  name = "Simple Calendar Pro"
+  url = "https://f-droid.org/packages/com.simplemobiletools.calendar.pro/"
+  %}
 
 ### Etar
 
@@ -371,6 +387,20 @@ Not really needed anymore.
   url = "https://f-droid.org/packages/com.kgurgul.cpuinfo/"
   grant = "Sensors"
   revoke = "Network"
+  %}
+
+### FlashDim
+
+{% include app.html
+  name = "FlashDim"
+  url = "https://f-droid.org/packages/com.cyb3rko.flashdim/"
+  %}
+
+### Flashlight Tiramisu
+
+{% include app.html
+  name = "Flashlight Tiramisu"
+  url = "https://f-droid.org/packages/com.pdb82.flashlighttiramisu"
   %}
 
 ### Flashy
