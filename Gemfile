@@ -16,6 +16,3 @@ gem "jekyll-theme-hacker"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.17"
 end
-
-# Required when using ruby >= 3.0.0
-gem "webrick", "~> 1.7"
