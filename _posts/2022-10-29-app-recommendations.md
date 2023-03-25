@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "App Recommendations"
+title: "App Recommendations"
 author: "rusty-snake"
 #tags:
 ---
@@ -11,6 +11,14 @@ In advance, this list assumes that you use [GrapheneOS](/2022/06/25/grapheneos.h
 {:toc}
 
 ## App Stores
+
+### Accrescent
+
+{% include app.html
+  name = "Accrescent"
+  url = "https://accrescent.app/"
+  grant = "Install unknown apps"
+  %}
 
 ### Play Store / Aurora Store
 
@@ -176,7 +184,7 @@ I prefer Aves as my gallery, however Simple Gallery Pro has a much better image 
 
 {% include app.html
   name = "PrivacyBlur"
-  url = "https://f-droid.org/de/packages/de.mathema.privacyblur/"
+  url = "https://f-droid.org/packages/de.mathema.privacyblur/"
   grant = "Media files"
   %}
 
@@ -261,6 +269,7 @@ Actually URL Radio is very buggy and I need to find a better app for radio strea
 {% include app.html
   name = "Simple Calendar Pro"
   url = "https://f-droid.org/packages/com.simplemobiletools.calendar.pro/"
+  grant = "Calendar"
   %}
 
 ### Etar
@@ -299,28 +308,50 @@ There are no good FOSS Android Calendar Apps, so you have to use Etar or Simple 
 
 ## Notes, Tasks and Reminders
 
-Other Notes/Tasks/Reminder apps worth looking at:
+| App | Notes | Task Lists | Reminders | Voice Notes | Markdown | Attachments | Material You | Dark Mode | Seedvault | Anti-Features & Permissions | Maintaince |
+| --- | ----- | ---------- | --------- | ----------- | -------- | ----------- | ------------ | --------- | --------- | --------------------------- | ---------- |
+| Another notes app<br><sup><code>com.maltaisn.notes.sync</code></sup> | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | - | only (critical) bugs *but got material you* |
+| D Note<br><sup><code>com.mahmoudrh.roomxml</code></sup> | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | - | n/a |
+| Fokus<br><sup><code>com.isaiahvonrundstedt.fokus</code></sup> | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ | ❌ | - | n/a |
+| Ionic Notes<br><sup><code>kurxz.github.io</code></sup> | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | Always on | ✅ | - | n/a |
+| Joplin<br><sup><code>net.cozic.joplin</code></sup> | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ❌ | Experimental | ❌ | Location Permission | n/a |
+| lists<br><sup><code>com.example.lists</code></sup> | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | - | n/a |
+| Markor<br><sup><code>net.gsanter.markor</code></sup> | ✅ | ✅ | ❌ | ✅ | ✅ wb | ✅ | ❌ | ✅ | ✅ | storage TODO | n/a |
+| My Brain<br><sup><code>com.mhss.app.mybrain</code></sup> | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ❌ | ✅ | ✅ | - | n/a |
+| NoNonsense Notes<br><sup><code>com.nononsenseapps.notepad</code></sup> | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ not synced with system; black | ✅ | - | n/a |
+| Notally<br><sup><code>com.omgodse.notally</code></sup> | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | - | n/a |
+| Note<br><sup><code>github.ck1412.noteApp</code></sup> | ❌ | ❌ | ❌ | ❌ | ✅ images only | ❌ | Always on | ✅ | - | n/a |
+| Notely<br><sup><code>com.davenet.notely</code></sup> | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | - | n/a |
+| Notes (PFA)<br><sup><code>org.secuso.privacyfriendlynotes</code></sup> | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | - | n/a |
+| Notesnook<br><sup><code>com.streetwriters.notesnook</code></sup> | ✅ | ❌ | ❌ | ❌ | ✅ wb | ✅ | ❌ | ✅ black | ❌ | Unfree dependencies | n/a |
+| Noto<br><sup><code>com.noto</code></sup> | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | - | n/a |
+| Orgzly<br><sup><code>com.orgzly</code></sup> | ✅ | ✅ | ✅ | ❌ | ✅ | ❌ | ✅ | ✅ black | ✅ | - | n/a |
+| Pinnit<br><sup><code>dev.sasikanth.pinnit</code></sup> | ✅ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | - | n/a |
+| PocketPlan<br><sup><code>com.pocket_plan.j7_003</code></sup> | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | - | n/a |
+| Quillnote<br><sup><code>org.qosp.quillnote</code></sup> | ✅ | ✅ | ✅ | ✅ | ✅wb | ✅ | ❌ | ✅black | ✅ | - | dead |
+| Quillpad<br><sup><code>io.github.quillpad</code></sup> | ✅ | ✅ | ✅ | ✅ | ✅wb | ✅ | ❌ | ✅black | ✅ | - | yes |
+| Simple Material Notes<br><sup><code>com.rafapps.simplenotes</code></sup> | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | - | n/a |
+| Simple Notes Pro<br><sup><code>com.simplemobiletools.notes.pro</code></sup> | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅ | - | n/a |
+| SimpleReminder<br><sup><code>felixwiemuth.simplereminder</code></sup> | ❌ | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ✅ | ❌ | - | n/a |
+| Standard Notes<br><sup><code>com.standardnotes</code></sup> | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | - | n/a |
+| Tasks.org<br><sup><code>org.tasks</code></sup> | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | ✅ | ✅ | TODO | n/a |
+| ToDark<br><sup><code>com.yoshi.todark</code></sup> | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | - | ✅ | - | n/a |
+| To-Do<br><sup><code>com.samuel.todoapp</code></sup> | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | - | n/a |
+| Todo List (PFA)<br><sup><code>org.secuso.privacyfriendlytodolist</code></sup> | ❌ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | - | n/a |
+| ToDo Manager<br><sup><code>com.github.webierta.todo_manager</code></sup> | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ not synced with system | ✅ | - | n/a |
+| Todopad<br><sup><code>com.example.flutter_riverpod_todo_app</code></sup> | ❌ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ not synced with system | ✅ | - | n/a |
+| Note to Self<br><sup>Signal & Co.</sup> | ☑️ | ❌ | ❌ | ✅ | ❌ | ☑️ | ❌ | ✅ | ❌ | - | n/a |
 
-- Notally
-- Simple Notes Pro
-- Joplin
-- Standart Notes
-- Pocket Plan
-- Fokus
-- lists
-- Notes (PFA)
-- Todo List (PFA)
-- Pinnit
+There are a lot more features to consider that a note in the table like
 
-### Quillnote
-
-{% include app.html
-  name = "Quillnote"
-  url = "https://f-droid.org/de/packages/org.qosp.notes/"
-  revoke = "Network"
-  %}
-
-Unmaintained, so sad.
+- Available translation
+- Support for Folders/Notebooks
+- Pining of Notes
+- Labels and Color for Notes
+- Setting a priority
+- Themed app icon support
+- History for Notes
+- ...
 
 ## Maps
 
@@ -410,6 +441,13 @@ Not really needed anymore.
   url = "https://f-droid.org/packages/rocks.poopjournal.flashy/"
   %}
 
+### Exodus
+
+{% include app.html
+  name = "Exodus"
+  url = "https://f-droid.org/packages/org.eu.exodus_privacy.exodusprivacy/"
+  %}
+
 ### PCAPdroid
 
 {% include app.html
@@ -458,12 +496,6 @@ Not really needed anymore.
   grant = "Location"
   %}
 
-{::comment}
-Add it back when they fixed the F-Droid build.
-### Exodus
-<https://f-droid.org/packages/org.eu.exodus_privacy.exodusprivacy/>
-{:/comment}
-
 <br>
 
-Last update: 2022-11-01
+Last update: 2023-03-25
