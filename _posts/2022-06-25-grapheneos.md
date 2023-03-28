@@ -69,6 +69,7 @@ reboot
   - Position: Off
   - Position > Services > WLAN Search: Off
   - Position > Services > Bluetooth Search: Off
+  - Secure User Plane Location: Disabled
 - Not security/privacy relevant but really handy.
   - System > Gestures and Moves > One hand mode: On
   - Notifications > Allow snooze for notifications: On
@@ -90,4 +91,4 @@ See [App Recommendations](/2022/10/29/app-recommendations.html).
 
 ---
 
-_Last update: 2022-10-29_
+_Last update: 2023-03-25_
