@@ -4,18 +4,12 @@
   <strong style="font-size: 1.2em;">{{ include.name }}</strong>
   <p></p>
 
-  URL: <a href="{{ include.url }}">{{ include.url }}</a>
+  <ul>
+    <li>App-ID: {{ include.app_id }}</li>
+    <li>URL: <a href="{{ include.url }}">{{ include.url }}</a></li>
+    <li>Available in: {{ include.available_in }}</li>
+  </ul>
   <p></p>
-
-  {% if include.anti_features %}
-    <strong style="font-size: 1.1em; color: salmon;">F-Droid Anti-Features</strong>
-    <ul>
-      {% assign anti_features = include.anti_features | split: ";" %}
-      {% for anti_feature in anti_features %}
-        <li>{{ anti_feature }}</li>
-      {% endfor %}
-    </ul>
-  {% endif %}
 
   {% if include.grant or include.revoke %}
     <strong style="font-size: 1.1em;">Permissions</strong>
