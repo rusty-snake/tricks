@@ -80,10 +80,17 @@ reboot
   - Notifications > Notifications histroy: On
 - Enable app pining.
   - Security > More Security settings > App pining: On
-- System > user profiles: TODO
 - Do not include private data in your device name.
   - About the Phone > Device name
 
+### Settings in new user profiles
+
+- Benachrichtigungen > Benachrichtigungsverlauf: On
+- Display > Automatische Helligkeit: Off
+- Display > Sperrbildschirm > Beim Hochheben Display aktivieren: Off
+- Sicherheit > Scramble PIN input layout: On
+- Datenschutz > Allow Sensors permission by default: Off
+- Vanadium > Einstellungen > Datenschutz und Sicherheit > Open external links in incognito: On
 
 ## Apps
 
@@ -91,4 +98,4 @@ See [App Recommendations](/2022/10/29/app-recommendations.html).
 
 ---
 
-_Last update: 2023-03-25_
+_Last update: 2023-08-18_
