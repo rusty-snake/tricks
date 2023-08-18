@@ -74,7 +74,7 @@ reboot
   - System > Gestures and Moves > One hand mode: On
   - Notifications > Allow snooze for notifications: On
 - Enable Material You if you want.
-  - Styles & Wallpapers > Use wallpsper colors: On
+  - Styles & Wallpapers > Use wallpaper colors: On
 - To catch "hidden" or short-living notifications, you should enable notifications
   histroy and review it.
   - Notifications > Notifications histroy: On
