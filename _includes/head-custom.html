@@ -1,0 +1,34 @@
+<meta name="referrer" content="no-referrer" />
+<meta
+  http-equiv="Content-Security-Policy"
+  content="
+    default-src 'self';
+      child-src 'none';
+      script-src 'self' 'unsafe-inline';
+        script-src-attr 'none';
+      connect-src 'none';
+      style-src 'self' 'unsafe-inline';
+      object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+  " />
+
+<script
+  type="module"
+  integrity="sha512-yOXwOrAWrHD8iEGq25hchM5Fin0/Eat8e4/UIGw7Y05xw2O5RKHzktoS6/bSdepNoq0Ycr9fNmYvdbWOWDjk0Q==" crossorigin="anonymous"
+>
+  //import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.4.0/dist/mermaid.esm.min.mjs';
+  import mermaid from '/assets/js/mermaid-10.4.0/package/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: false,
+    logLevel: 'error',
+    theme: 'dark',
+    themeVariables: {
+      nodeBorder: '#b5e853',
+    },
+  });
+  await mermaid.run({
+    querySelector: '.language-mermaid',
+  });
+</script>
+
