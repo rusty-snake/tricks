@@ -30,4 +30,5 @@ wget \
 
 `wget` has many options for web scrabing, best you read the
 `Recursive Retrieval Options` and `Recursive Accept/Reject Options` sections
-in the [wget manpage](https://www.man7.org/linux/man-pages/man1/wget.1.html).
+in the [wget manpage](https://www.man7.org/linux/man-pages/man1/wget.1.html)
+and <https://www.gnu.org/software/wget/manual/html_node/Recursive-Download.html#Recursive-Download>.
