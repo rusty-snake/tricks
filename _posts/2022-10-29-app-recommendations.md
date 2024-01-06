@@ -101,9 +101,11 @@ Otherwise you can use the Aurora Store.
 #### Settings
 
 Brave Schutz & Datenschutz > Tracker & Werbung blockieren: aggresiv
-Brave Schutz & Datenschutz > Immer sichere Verbindungen verwenden: An
+Brave Schutz & Datenschutz > Verbindungen auf HTTPS upgraden: Alle Verbindungen müssen HTTPS verwenden (streng)
 Brave Schutz & Datenschutz > Skripte blockieren: An
 Brave Schutz & Datenschutz > Fingerprinting blockieren: streng
+Brave Schutz & Datenschutz > Fingerprinting über die Spracheinstellungen verhindern: Aus
+Brave Schutz & Datenschutz > Vergiss mich, wenn ich diese Seite schließe: An
 Brave Schutz & Datenschutz > Daten beim Beenden löschen: An
 Brave Schutz & Datenschutz > Social Media Blocking: Alles Aus
 Brave Schutz & Datenschutz > YouTube: Alles An
@@ -119,14 +121,16 @@ Brave Schutz & Datenschutz > Ping der täglichen Nutzung automatisch an Brave se
 Brave Schutz & Datenschutz > Wichtigste Websites in Autovervollständigung anzeigen: Aus
 Brave Wallet > Web3-Benachrichtigungen anzeigen: Aus
 Startseite: Aus
-Privatsphärebericht: An
 Downloads > Benachrichtigung über den Download-Fortschritt anzeigen: An
 Downloads > Wenn möglich automatisch öffnen: Aus
 Hintergrundwiedergabe: An
 Darstellung > Brave-Belohnungen-Symbol in der Adressleite anzeigen: Aus
+*Alle standard verknüpfungen auf der Neuer-Tab-Seite löschen*
 Neuer-Tab-Seite > Hintergrundbildanzeigen: Aus
 Neuer-Tab-Seite > Gesponsorte Bilder anzeigen: Aus
 Neuer-Tab-Seite > Die führenden Seiten anzeigen: Aus
+Zahlungsmethoden > Zahlungsmethoden speichern und ausfüllen: Aus
+Adressen > Adressen speichern und ausfüllen: Aus
 
 {::comment}
 TODO: Initial connections
@@ -147,6 +151,8 @@ Site Isolation can be tweaked to match vanadiums settings
   url = "https://www.torproject.org/download/#android"
   available_in = "Obtainium (HTML), FFUpdater"
   %}
+
+Second URL (maybe better for Obtainium): <https://dist.torproject.org/torbrowser/>
 
 ## Messenger
 
@@ -173,6 +179,15 @@ Site Isolation can be tweaked to match vanadiums settings
 - Enable Registration Lock
 - Enable Message Backup
 
+### Nextcloud Talk
+
+{% include app.html
+  name = "Talk"
+  app_id = "com.nextcloud.talk2"
+  url = "https://github.com/nextcloud/talk-android"
+  available_in = "Obtainium"
+  %}
+
 ## Feed Reader
 
 ### Feeder
@@ -180,8 +195,8 @@ Site Isolation can be tweaked to match vanadiums settings
 {% include app.html
   name = "Feeder"
   app_id = "com.nononsenseapps.feeder"
-  url = "https://f-droid.org/packages/com.nononsenseapps.feeder/"
-  available_in = "F-Droid"
+  url = "https://github.com/spacecowboy/Feeder"
+  available_in = "Obtainium"
   %}
 
 #### Settings
@@ -194,6 +209,15 @@ Site Isolation can be tweaked to match vanadiums settings
   name = "Read You"
   app_id = "me.ash.reader"
   url = "https://github.com/Ashinch/ReadYou"
+  available_in = "Obtainium"
+  %}
+
+### News
+
+{% include app.html
+  name = "News"
+  app_id = "co.appreactor.news"
+  url = "https://github.com/bubelov/news"
   available_in = "Obtainium"
   %}
 
@@ -221,7 +245,7 @@ Site Isolation can be tweaked to match vanadiums settings
 
 {% include app.html
   name = "KeePassDX"
-  app_id = "com.kunzisoft.keepass.free"
+  app_id = "com.kunzisoft.keepass.free OR com.kunzisoft.keepass.libre"
   url = "https://github.com/Kunzisoft/KeePassDX"
   available_in = "Obtainium"
   %}
@@ -267,6 +291,8 @@ Site Isolation can be tweaked to match vanadiums settings
   available_in = "Obtainium"
   %}
 
+- Settings > About the App > Check for Updates: Off
+
 ### Watermarking
 
 {% include app.html
@@ -288,6 +314,15 @@ it's still one of the better FOSS Audio player I know.
   url = "https://github.com/OxygenCobalt/Auxio"
   available_in = "Obtainium"
   grant = "Music and Audio"
+  %}
+
+### InnerTune
+
+{% include app.html
+  name = "InnerTune"
+  app_id = "com.zionhuang.music"
+  url = "https://github.com/z-huang/InnerTune"
+  available_in = "Obtainium"
   %}
 
 ### Just Player
@@ -332,6 +367,17 @@ it's still one of the better FOSS Audio player I know.
 {% include app.html
   name = "Seal"
   url = "https://github.com/JunkFood02/Seal"
+  %}
+
+- Settings > About > Automatic updates: Off
+
+### ViMusic
+
+{% include app.html
+  name = "ViMusic"
+  app_id = "it.vfsfitvnm.vimusic"
+  url = "https://github.com/vfsfitvnm/ViMusic"
+  available_in = "Obtainium"
   %}
 
 ### VLC
@@ -386,14 +432,23 @@ it's still one of the better FOSS Audio player I know.
   grant = "Enable Storage Scope"
   %}
 
-## Calendar
-
-### Simple Calendar Pro
+### QRServ
 
 {% include app.html
-  name = "Simple Calendar Pro"
-  app_id = "com.simplemobiletools.calendar.pro"
-  url = "https://github.com/SimpleMobileTools/Simple-Calendar"
+  name = "QRServ"
+  app_id = "dev.uint.qrserv"
+  url = "https://github.com/uintdev/qrserv"
+  available_in = "Obtainium"
+  %}
+
+## Calendar
+
+### Fossify Calendar
+
+{% include app.html
+  name = "Calendar"
+  app_id = "org.fossify.calendar"
+  url = "https://github.com/FossifyOrg/Calendar"
   available_in = "Obtainium"
   grant = "Calendar"
   %}
@@ -514,6 +569,16 @@ There are hundreds with different features, usage, UI, ...
   grant = "Microphone"
   %}
 
+### Sayboard
+
+{% include app.html
+  name = "Sayboard"
+  app_id = "com.elishaazaria.sayboard"
+  url = "https://github.com/ElishaAz/Sayboard"
+  available_in = "Obtainium"
+  grant = "Microphone"
+  %}
+
 ## Nerd utils
 
 ### Alga
@@ -585,6 +650,15 @@ fancy looking one or one that can convert units.
   available_in = "Obtainium"
   %}
 
+### Unitto
+
+{% include app.html
+  name = "Unitto"
+  app_id = "com.sadellie.unitto"
+  url = "https://github.com/sadellie/unitto"
+  available_in = "Obtainium"
+  %}
+
 <br>
 
-Last update: 2023-08-18
+Last update: 2024-01-06
