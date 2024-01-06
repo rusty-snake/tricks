@@ -190,7 +190,7 @@ background that you can attach to.
 sudo -u nextcloud tmux attach-session -t nc-admin0
 ~~~
 
-`/var/lib/nextcloud/.config/systemd/user/tmux.service`:
+`tmux.service`
 
 ~~~ systemd
 [Unit]
@@ -201,27 +201,7 @@ Documentation=man:tmux(1)
 Type=forking
 ExecStart=/usr/bin/tmux start-server; new-session -s nc-admin0 -d
 ExecStop=/usr/bin/tmux kill-server
-Restart=always
-
-[Install]
-WantedBy=default.target
-~~~
-
-{::comment}
-
-`tmux.service`
-
-~~~ systemd
-[Unit]
-Description=tmux terminal multiplexer
-Documentation=man:tmux(1)
-
-[Service]
-Type=forking
-# HACK: tmux 3.3a needs `-S/nonexistent` for socket activation to work, see https://github.com/tmux/tmux/issues/3345.
-ExecStart=/usr/bin/tmux -S/nonexistent start-server; new-session -s nc-admin0 -d
-ExecStop=/usr/bin/tmux kill-server
-# If you enable tmux.service rather than tmux.socket, you might want to add the following:
+# If you enable tmux.service rather than tmux.socket, add the following.
 #Restart=always
 
 [Install]
@@ -244,11 +224,9 @@ DirectoryMode=0700
 WantedBy=sockets.target
 ~~~
 
-{:/comment}
-
 ~~~ bash
-mkdir -p /var/lib/nextcloud/.config/systemd/user/default.target.wants
-ln -s /var/lib/nextcloud/.config/systemd/user/tmux.service /var/lib/nextcloud/.config/systemd/user/default.target.wants/tmux.service
+mkdir -p /var/lib/nextcloud/.config/systemd/user/sockets.target.wants
+ln -s /var/lib/nextcloud/.config/systemd/user/tmux.socket /var/lib/nextcloud/.config/systemd/user/sockets.target.wants/tmux.socket
 ~~~
 
 `/var/lib/nextcloud/.tmux.conf`:
@@ -312,7 +290,7 @@ USER caddy
 ~~~
 
 ~~~ bash
-podman pull docker.io/library/caddy:2 docker.io/library/nextcloud:27-fpm-alpine
+podman pull docker.io/library/caddy:2 docker.io/library/nextcloud:28-fpm-alpine
 buildah bud -f caddy-rootless.containerfile -t caddy-rootless:2
 ~~~
 
@@ -361,6 +339,7 @@ ReadOnly=true
 PodmanArgs=--read-only-tmpfs=false
 #ReadOnlyTmpfs=false
 #SeccompProfile=
+# hidepid
 PodmanArgs=--security-opt=proc-opts=subset=pid
 
 LogDriver=k8s-file
@@ -399,7 +378,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Container]
-Image=docker.io/library/nextcloud:27-fpm-alpine
+Image=docker.io/library/nextcloud:28-fpm-alpine
 Pull=never
 # TODO
 #AutoUpdate=local
@@ -454,7 +433,7 @@ Wants=network-online.target
 After=network-online.target
 
 [Container]
-Image=docker.io/library/nextcloud:27-fpm-alpine
+Image=docker.io/library/nextcloud:28-fpm-alpine
 Pull=never
 # TODO
 #AutoUpdate=local
@@ -556,7 +535,7 @@ systemctl daemon-reload
 	}
 
 	# Cache-Control
-	@static-resources path *.css *.js *.mjs *.svg *.gif *.png *.jpg *.ico *.wasm *.tflite
+	@static-resources path *.css *.js *.mjs *.svg *.gif *.png *.jpg *.ico *.wasm *.tflite *.map *.ogg *.flac
 	handle @static-resources {
 		map {query.v} {immutable} {
 			"" ""
@@ -626,7 +605,7 @@ php ./occ config:system:set trusted_proxies 0 --value=127.0.0.1
 
 php ./occ config:system:set overwritehost --value=192.168.0.3:7777
 php ./occ config:system:set overwriteprotocol --value=https
-php ./occ config:system:set overwritewebroot --value=/
+#php ./occ config:system:set overwritewebroot --value=/
 php ./occ config:system:set overwrite.cli.url --value=https://192.168.0.3:7777/
 
 php ./occ config:system:set trusted_domains 0 --value=127.0.0.1:7867
@@ -732,6 +711,7 @@ What's next?
  * [MariaDB](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#using-mariadb-mysql-instead-of-sqlite)
  * [APCu / Redis / Memcached](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/caching_configuration.html)
  * [Imaginary](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#previews)
+ * Multiple nextcloud containers (in one pod?) and caddy load balancing
 
 #### Hardening
 
@@ -740,7 +720,8 @@ What's next?
  * Configure access logging
  * Customized seccomp profiles for caddy and nextcloud `--security-opt=seccomp=<profile>.json`
  * Limit resource usage by containers: `--cpu-*`, `--device-*`, `--memory`/`--memory-reservation`/`--memory-swap`, `--pids-limit`, experts:`--cgroup-conf=` and `--ulimit`
- * Minimal Images
+ * Minimal Images (distroless)
+ * mask paths inside /sys
 
 #### Features
 
