@@ -59,3 +59,15 @@ for file in os.listdir():
         check=True,
     )
 ~~~
+
+## Extract the audio track from a video
+
+~~~ bash
+ffmpeg -i input.mp4 -vn -acodec copy output.aac
+~~~
+
+## Convert wav to mp3
+
+~~~ bash
+ffmpeg -i input.wav -acodec libmp3lame output.mp3
+~~~
