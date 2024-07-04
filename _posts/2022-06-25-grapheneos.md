@@ -49,11 +49,8 @@ reboot
   - Network & Internet > SIM-Card > 2G: Off
 - WiFi calling can be enabled (contract dependent).
   - Network & Internet > SIM-Card > WLAN-Telefonie
-- If you want you can enable Auto reboot.
-  - Security > Auto reboot: _duration_
-- You can further hardening USB security by always denying USB accessories if
-  you want.
-  - Security > USB accessories: Deny
+- You can further hardening USB security.
+  - Security > USB-C port: Charging-only when locked
 - Unless one of your apps requires it, you should disable native code debugging
   (ptrace).
   - Security > Enable native code debugging: Off
@@ -80,6 +77,8 @@ reboot
   - Notifications > Notifications histroy: On
 - Enable app pining.
   - Security > More Security settings > App pining: On
+- If you want to be notified about chrashed system processes:
+  - Security > Notify about system process crashes: On
 - Do not include private data in your device name.
   - About the Phone > Device name
 
@@ -92,10 +91,6 @@ reboot
 - Datenschutz > Allow Sensors permission by default: Off
 - Vanadium > Einstellungen > Datenschutz und Sicherheit > Open external links in incognito: On
 
-## Apps
-
-See [App Recommendations](/2022/10/29/app-recommendations.html).
-
 ---
 
-_Last update: 2023-08-18_
+_Last update: 2024-07-04_
