@@ -201,32 +201,15 @@ Documentation=man:tmux(1)
 Type=forking
 ExecStart=/usr/bin/tmux start-server; new-session -s nc-admin0 -d
 ExecStop=/usr/bin/tmux kill-server
-# If you enable tmux.service rather than tmux.socket, add the following.
-#Restart=always
+Restart=always
 
 [Install]
 WantedBy=default.target
 ~~~
 
-`tmux.socket`
-
-~~~ systemd
-[Unit]
-Description=tmux terminal multiplexer socket
-Documentation=man:tmux(1)
-
-[Socket]
-ListenStream=/tmp/tmux-%U/default
-SocketMode=0660
-DirectoryMode=0700
-
-[Install]
-WantedBy=sockets.target
-~~~
-
 ~~~ bash
-mkdir -p /var/lib/nextcloud/.config/systemd/user/sockets.target.wants
-ln -s /var/lib/nextcloud/.config/systemd/user/tmux.socket /var/lib/nextcloud/.config/systemd/user/sockets.target.wants/tmux.socket
+mkdir -p /var/lib/nextcloud/.config/systemd/user/default.target.wants
+ln -s /var/lib/nextcloud/.config/systemd/user/tmux.service /var/lib/nextcloud/.config/systemd/user/default.target.wants/tmux.service
 ~~~
 
 `/var/lib/nextcloud/.tmux.conf`:
@@ -547,8 +530,8 @@ systemctl daemon-reload
 	header @woff Cache-Control "max-age=604800"
 
 	# /.well-known/ redirects
-	redir /.well-known/carddav /remote.php/dav 301
-	redir /.well-known/caldav /remote.php/dav 301
+	redir /.well-known/carddav /remote.php/dav/ 301
+	redir /.well-known/caldav /remote.php/dav/ 301
 	rewrite /.well-known/acme-challenge /index.php?{query}
 	rewrite /.well-known/pki-validation /index.php?{query}
 	@well-known {
@@ -708,7 +691,9 @@ What's next?
 
 #### Performance
 
- * [MariaDB](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#using-mariadb-mysql-instead-of-sqlite)
+ * PostgreSQL
+   https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#using-mariadb-mysql-instead-of-sqlite
+   https://www.postgresql.org/docs/15/admin.html
  * [APCu / Redis / Memcached](https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/caching_configuration.html)
  * [Imaginary](https://docs.nextcloud.com/server/latest/admin_manual/installation/server_tuning.html#previews)
  * Multiple nextcloud containers (in one pod?) and caddy load balancing
@@ -721,6 +706,7 @@ What's next?
  * Customized seccomp profiles for caddy and nextcloud `--security-opt=seccomp=<profile>.json`
  * Limit resource usage by containers: `--cpu-*`, `--device-*`, `--memory`/`--memory-reservation`/`--memory-swap`, `--pids-limit`, experts:`--cgroup-conf=` and `--ulimit`
  * Minimal Images (distroless)
+ * Remove suid/sgid permissions from files
  * mask paths inside /sys
 
 #### Features
