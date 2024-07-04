@@ -302,6 +302,8 @@ Second URL (maybe better for Obtainium): <https://dist.torproject.org/torbrowser
   available_in = "Obtainium"
   %}
 
+### Open Video Editor
+
 ## Media
 
 ### Auxio
@@ -380,6 +382,8 @@ it's still one of the better FOSS Audio player I know.
   available_in = "Obtainium"
   %}
 
+### mpv
+
 ### VLC
 
 {% include app.html
@@ -422,6 +426,8 @@ it's still one of the better FOSS Audio player I know.
 
 ## File-Sharing
 
+### Syncthing
+
 ### Nextcloud
 
 {% include app.html
@@ -440,6 +446,8 @@ it's still one of the better FOSS Audio player I know.
   url = "https://github.com/uintdev/qrserv"
   available_in = "Obtainium"
   %}
+
+### ShareX
 
 ## Calendar
 
@@ -485,6 +493,12 @@ There are hundreds with different features, usage, UI, ...
   url = "https://codeberg.org/florian-obernberger/flutter-doable"
   available_in = "Obtainium"
   %}
+
+### Quillpad
+
+### Noto
+
+### Saber
 
 ## Maps
 
@@ -658,6 +672,8 @@ fancy looking one or one that can convert units.
   url = "https://github.com/sadellie/unitto"
   available_in = "Obtainium"
   %}
+
+### HeliBoard
 
 <br>
 
