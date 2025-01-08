@@ -45,7 +45,7 @@ reboot
   - Network & Internet > Internet > Network Settings > Turn off Wi-Fi automatically: 15sec
   - Connected Devices > Bluetooth timeout: 15sec
 - Cellular network can be hardened.
-  - Network & Internet > SIM-Card > Prefered Nettype: LTE-only
+  - Network & Internet > SIM-Card > Preferred Nettype: LTE-only
   - Network & Internet > SIM-Card > 2G: Off
 - WiFi calling can be enabled (contract dependent).
   - Network & Internet > SIM-Card > WLAN-Telefonie
@@ -60,7 +60,7 @@ reboot
   - Privacy > Camera: Off
   - Privacy > Microphone: Off
 - There are not that much apps that require Sensors permission, using a whitelist
-  rather than a blacklist managment for it makes really sense.
+  rather than a blacklist management for it makes really sense.
   - Privacy > Allow Sensors permission to apps by default: Off
 - Disable position services.
   - Position: Off
@@ -73,11 +73,11 @@ reboot
 - Enable Material You if you want.
   - Styles & Wallpapers > Use wallpaper colors: On
 - To catch "hidden" or short-living notifications, you should enable notifications
-  histroy and review it.
-  - Notifications > Notifications histroy: On
+  history and review it.
+  - Notifications > Notifications history: On
 - Enable app pining.
   - Security > More Security settings > App pining: On
-- If you want to be notified about chrashed system processes:
+- If you want to be notified about crashed system processes:
   - Security > Notify about system process crashes: On
 - Do not include private data in your device name.
   - About the Phone > Device name

@@ -5,8 +5,8 @@ author: "rusty-snake"
 #tags:
 ---
 
-Nautilus (GNOME File Manager) supports custom script to take actions on files.
-These scripts are placed in `~/.local/share/nautilus/scripts`.
+Nautilus (GNOME File Manager) allows for custom scripts to perform actions on files.
+These scripts are placed in the `~/.local/share/nautilus/scripts` directory.
 
 ## pngquant
 

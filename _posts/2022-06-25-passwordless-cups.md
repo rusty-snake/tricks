@@ -5,10 +5,11 @@ author: "rusty-snake"
 #tags:
 ---
 
-Annoyed by entering your password every time you change printer settings in
+Frustrated by having to enter your password each time you modify printer settings in
 gnome-control-center?
 
-Create `/etc/polkit-1/rules.d/40-passwordless-cups.rules`:
+Then allow users in the `wheel` group to do so without password prompt by creating
+`/etc/polkit-1/rules.d/40-passwordless-cups.rules` with this content:
 
 ~~~ js
 polkit.addRule(function(action, subject) {

@@ -71,3 +71,9 @@ ffmpeg -i input.mp4 -vn -acodec copy output.aac
 ~~~ bash
 ffmpeg -i input.wav -acodec libmp3lame output.mp3
 ~~~
+
+## Merger separated video and audio streams/files
+
+~~~ bash
+ffmpeg -i video.mp4 -i audio.mp4 -c copy video-with-audio.mp4
+~~~

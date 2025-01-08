@@ -5,20 +5,22 @@ author: "rusty-snake"
 #tags:
 ---
 
+**Disclaimer:** Discontinued
+
 - ToC
 {:toc}
 
 Architecture
 ------------
 
-The overall architecture of this first concept contists of
+The overall architecture of this first concept consists of
 
 1. A caddy webserver on the host started by a hardened systemd service.
    The rule of this caddy instance is to proper terminate the https connection
    and forward everything to the Nextcloud pod. This is a grown construct to
    workaround some problems and might get/should be replaced with something
    better in the future.
-2. A caddy webserver does static file servering and acts as the reverse proxy to php-fpm.
+2. A caddy webserver does static file serving and acts as the reverse proxy to php-fpm.
 3. A Nextcloud php-fpm container.
 4. A Nextcloud container for cron.
 
@@ -180,6 +182,17 @@ chown -R nextcloud:nextcloud /var/lib/nextcloud
 chmod 0700 /var/lib/nextcloud
 loginctl enable-linger nextcloud
 ~~~
+
+<!--
+> ~~~ bash
+> env -i sudo -u nextcloud env "XDG_RUNTIME_DIR=/run/user/$(id -u nextcloud)" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u nextcloud)/bus" "TERM=$TERM" systemd-run --user --pty --wait --collect --service-type=exec bash -l
+> ~~~
+
+> TODO: namespace.conf
+> disable
+>  * pipewire / pipewire-pulse service and socket and wireplumber.service
+>  * obex.service
+-->
 
 ### tmux ###
 
@@ -579,7 +592,7 @@ podman exec nextcloud-app chown www-data:www-data /srv/nextcloud/data
 ~~~
 
 Open `https://192.168.0.3:7777/` in a browser and install Nextcloud.
-Use `/srv/nextcloud/data` as your data directory. Afterwards you must/can futher
+Use `/srv/nextcloud/data` as your data directory. Afterwards you must/can further
 via `occ`.
 
 ~~~ bash
@@ -677,15 +690,21 @@ ExecStart=/var/lib/nextcloud/backup.sh
 RequiredBy=nextcloud-caddy.service nextcloud-app.service nextcloud-cron.service
 ~~~
 
+<!--
+~~~ bash
+podman exec -i -u www-data nextcloud-app php ./occ config:system:set maintenance_window_start --type=integer --value=100
+~~~
+-->
+
 What's next?
 ------------
 
-#### Maintainance
+#### Maintenance
 
  * Keep installation up-to-date by pulling the newest images / rebuilding them.
  * Update Nextcloud image to newer major release before the old one becomes EOL.
  * Backups
- * Regularly check the admin page for new warnings like missing indicies which can be added using
+ * Regularly check the admin page for new warnings like missing indices which can be added using
    `podman exec -i -u www-data nextcloud-app php ./occ db:add-missing-indices`.
  * Automatic updates (except major updates)
 
@@ -716,4 +735,17 @@ What's next?
  * Setup Nextcloud Office with <abbr title="Collabora Online Development Edition">CODE</abbr> or ONLYOFFICE
  * Look at Nextcloud All-in-One and the stuff it provides like fulltextsearch
 
+<!--
 ---
+
+	# Uncomment this block if you use onlyoffice: https://github.com/nextcloud/all-in-one/blob/main/Containers/apache/Caddyfile
+	#handle_path /onlyoffice/* {
+	#	reverse_proxy {$ONLYOFFICE_IP}:{$ONLYOFFICE_PORT} {
+	#		header_up X-Forwarded-Host {host}/onlyoffice
+	#	}
+	#}
+
+
+TODO: encode zstd
+TODO: request body max size lift
+-->
