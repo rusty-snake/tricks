@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Passwordless cups"
+title: "Passwordless cups"
 author: "rusty-snake"
 #tags:
 ---

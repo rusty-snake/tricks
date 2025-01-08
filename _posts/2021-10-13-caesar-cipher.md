@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Caesar cipher in the terminal"
+title: "Caesar cipher in the terminal"
 author: "rusty-snake"
 #tags:
 ---

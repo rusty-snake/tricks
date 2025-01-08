@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GrapheneOS"
+title: "GrapheneOS"
 author: "rusty-snake"
 #tags:
 ---
@@ -47,6 +47,7 @@ reboot
 - Cellular network can be hardened.
   - Network & Internet > SIM-Card > Preferred Nettype: LTE-only
   - Network & Internet > SIM-Card > 2G: Off
+  - Also remember to out-out of carrier analytics like https://www.telefonica.de/partner/wholesale/enabling-services/mobility-insights.html#selbst_entscheiden
 - WiFi calling can be enabled (contract dependent).
   - Network & Internet > SIM-Card > WLAN-Telefonie
 - You can further hardening USB security.

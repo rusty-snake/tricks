@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Nautilus scripts"
+title: "Nautilus scripts"
 author: "rusty-snake"
 #tags:
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "GitHub Pages"
+title: "GitHub Pages"
 author: "rusty-snake"
 #tags:
 ---

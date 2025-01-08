@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Create a dummy microphone with pulseaudio"
+title: "Create a dummy microphone with pulseaudio"
 author: "rusty-snake"
 #tags:
 ---
