@@ -11,20 +11,19 @@
     form-action 'none';
   " />
 
-<script type="module"
-  integrity="sha512-43xR/7oX0dAXN3MQlDRkMOcayARxCTaCb+3EqWNBDYVKyWmx0v6Cx7E8nAYsgB3PNj9ziyJ9o4N0qniqN6DT1Q=="
-  crossorigin="anonymous">
-    //import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.esm.min.mjs';
-    import mermaid from '{{ site.baseurl }}/assets/js/mermaid-10.9.1/package/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({
-      startOnLoad: false,
-      logLevel: 'error',
-      theme: 'dark',
-      themeVariables: {
-        nodeBorder: '#b5e853',
-      },
-    });
-    await mermaid.run({
-      querySelector: '.language-mermaid',
-    });
-  </script>
+<!-- FIXME integrity="sha512-..." -->
+<script type="module" crossorigin="anonymous">
+  //import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.5.0/dist/mermaid.esm.min.mjs';
+  import mermaid from '{{ site.baseurl }}/assets/js/mermaid-11.5.0/package/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: false,
+    logLevel: 'error',
+    theme: 'dark',
+    themeVariables: {
+      nodeBorder: '#b5e853',
+    },
+  });
+  await mermaid.run({
+    querySelector: '.language-mermaid',
+  });
+</script>
