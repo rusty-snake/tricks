@@ -14,5 +14,5 @@ gem "jekyll", "~> 4.4.1"
 gem "jekyll-theme-hacker"
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.17"
+  gem "jekyll-feed", "~> 0.18"
 end
